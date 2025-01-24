@@ -42,7 +42,7 @@ for url in game_list:
         for row in rows:
             cells = row.find_all("td")
             if cells:  # Ignore empty rows
-                player_data = [cell.get_text(strip=True) for cell in cells]
+                player_data = [cell.get_text() for cell in cells]
                 player_data.extend([""] * (14 - len(player_data)))
                 data.append(player_data)
 

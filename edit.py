@@ -20,7 +20,7 @@ def summarize_season_stats(input_csv, output_csv):
     
     # Group by PLAYER_NAME to aggregate stats
     season_summary = df.groupby("PLAYERS").agg(
-        GAMES_PLAYED=("PLAYERS", "count"),
+        GAMES=("PLAYERS", "count"),
         MIN=("MIN", "sum"),
         PTS=("PTS", "sum"),
         REB=("REB", "sum"),
@@ -41,13 +41,13 @@ def summarize_season_stats(input_csv, output_csv):
 
     
     # Calculate averages and shooting percentages
-    season_summary["MPG"] = (season_summary["MIN"] / season_summary["GAMES_PLAYED"]).round(2)
-    season_summary["PPG"] = (season_summary["PTS"] / season_summary["GAMES_PLAYED"]).round(2)
-    season_summary["RPG"] = (season_summary["REB"] / season_summary["GAMES_PLAYED"]).round(2)
-    season_summary["APG"] = (season_summary["AST"] / season_summary["GAMES_PLAYED"]).round(2)
-    season_summary["SPG"] = (season_summary["STL"] / season_summary["GAMES_PLAYED"]).round(2)
-    season_summary["BPG"] = (season_summary["BLK"] / season_summary["GAMES_PLAYED"]).round(2)
-    season_summary["TOPG"] = (season_summary["TO"] / season_summary["GAMES_PLAYED"]).round(2)
+    season_summary["MPG"] = (season_summary["MIN"] / season_summary["GAMES"]).round(2)
+    season_summary["PPG"] = (season_summary["PTS"] / season_summary["GAMES"]).round(2)
+    season_summary["RPG"] = (season_summary["REB"] / season_summary["GAMES"]).round(2)
+    season_summary["APG"] = (season_summary["AST"] / season_summary["GAMES"]).round(2)
+    season_summary["SPG"] = (season_summary["STL"] / season_summary["GAMES"]).round(2)
+    season_summary["BPG"] = (season_summary["BLK"] / season_summary["GAMES"]).round(2)
+    season_summary["TOPG"] = (season_summary["TO"] / season_summary["GAMES"]).round(2)
     season_summary["FGP"] = (season_summary["FGM"] / season_summary["FGA"] * 100).round(1)
     season_summary["TPP"] = (season_summary["TPM"] / season_summary["TPA"] * 100).round(1)
     season_summary["FTP"] = (season_summary["FTM"] / season_summary["FTA"] * 100).round(1)
@@ -58,7 +58,7 @@ def summarize_season_stats(input_csv, output_csv):
     
     # Select final columns to output
     final_columns = [
-        "PLAYERS", "GAMES_PLAYED", "MIN", "MPG", "PTS", "PPG", 
+        "PLAYERS", "GAMES", "MIN", "MPG", "PTS", "PPG", 
         "REB", "RPG", "OREB", "DREB", "AST", "APG", "STL", "SPG",
         "BLK", "BPG", "TO", "TOPG", "PF",
         "FGM", "FGA", "FGP",
