@@ -12,9 +12,11 @@ def csv_to_html(input_csv, output_html):
             border-collapse: collapse;
             font-family: "Roboto", sans-serif;
             font-size: 10px;
+            border-radius:15px;
+            border: 2px solid #ddd;
         }
+        
         th, td {
-            border: 1px solid #ddd;
             text-align: center;
             padding: 1px;
         }
@@ -138,7 +140,7 @@ def csv_to_html(input_csv, output_html):
             background-color: var(--color-light-grey-100);
         }
         tr:hover {
-            background-color: var(--color-purple-100);
+            background: var(--color-unrivaled);
         }
         caption {
             font-size: 10px;
