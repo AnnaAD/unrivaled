@@ -208,7 +208,7 @@ def csv_to_html(input_csv, output_html):
         {style}
     </head>
     <body>
-        <h1 style="text-align: center;">🏀 Unrivaled 2025 Season Summary 🏀 </h1>
+        <h1 style="text-align: center;">&#127936; Unrivaled 2025 Season Summary &#127936; </h1>
         <h3 style="text-align: center;"><i>Last Updated {datetime.datetime.now().strftime("%I:%M%p on %B %d, %Y")} </i></h3>
         {table_html}
         {script}
@@ -224,6 +224,6 @@ def csv_to_html(input_csv, output_html):
 
 # Example usage
 input_csv = "player_season_summary.csv"  # Replace with your CSV file path
-output_html = "season_summary.html"  # Replace with desired HTML 
+output_html = "site/index.html"  # Replace with desired HTML 
 
 csv_to_html(input_csv,output_html)
