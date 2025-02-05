@@ -30,6 +30,9 @@ def csv_to_html(input_csv, output_html):
             user-select: none; /* Standard */
             color:black;
         }
+        th:hover {
+            text-decoration: underline;
+        }
         body {
             font-family: "Roboto", sans-serif;
             background-color:var(--color-black-100);
